@@ -20,7 +20,7 @@ export const AlreadyLogged: FC<{ children: Array<JSX.Element> | JSX.Element }> =
 				authContext.setToken(token);
 				history.push("/");
 			}
-		}, []);
+		}, [authContext, history]);
 
 		return <> {children} </>;
 	};

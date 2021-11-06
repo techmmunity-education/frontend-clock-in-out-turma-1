@@ -19,7 +19,7 @@ export const RequireLogin: FC<{ children: Array<JSX.Element> | JSX.Element }> =
 			if (token && !authContext.token) {
 				authContext.setToken(token);
 			}
-		}, []);
+		}, [authContext, history]);
 
 		return <>{children}</>;
 	};

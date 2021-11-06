@@ -29,38 +29,50 @@ const Register = () => {
 		[],
 	);
 
-	const onFinish = useCallback(async (values: any) => {
-		try {
-			setLoadingState();
+	const onFinish = useCallback(
+		async (values: any) => {
+			try {
+				setLoadingState();
 
-			const { authCode } = await register(values);
+				const { authCode } = await register(values);
 
-			setSuccessState();
+				if (values.remember) {
+					localStorage.setItem("userToken", authCode);
+				}
 
-			if (values.remember) {
-				localStorage.setItem("userToken", authCode);
+				setToken(authCode);
+				setSuccessState();
+				history.push("/");
+
+				toast.success("Registrado com sucesso");
+			} catch (err: any) {
+				setErrorState();
+
+				toast.error("Falha ao se registrar");
+				// eslint-disable-next-line no-console
+				console.log(err);
 			}
+		},
+		[
+			history,
+			register,
+			setErrorState,
+			setLoadingState,
+			setSuccessState,
+			setToken,
+		],
+	);
 
-			setToken(authCode);
-			history.push("/");
-
-			toast.success("Registrado com sucesso");
-		} catch (err: any) {
+	const onFinishFailed = useCallback(
+		(error: any) => {
 			setErrorState();
 
 			toast.error("Falha ao se registrar");
 			// eslint-disable-next-line no-console
-			console.log(err);
-		}
-	}, []);
-
-	const onFinishFailed = useCallback((error: any) => {
-		setErrorState();
-
-		toast.error("Falha ao se registrar");
-		// eslint-disable-next-line no-console
-		console.log(error);
-	}, []);
+			console.log(error);
+		},
+		[setErrorState],
+	);
 
 	return (
 		<Container>
