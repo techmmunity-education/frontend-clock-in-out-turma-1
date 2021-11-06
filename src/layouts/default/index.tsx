@@ -1,6 +1,10 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 export const DefaultLayout: FC<{ children: Array<JSX.Element> | JSX.Element }> =
 	({ children }) => {
-		return <Container>{children}</Container>;
+		return (
+			<Container>
+				<Content>{children}</Content>
+			</Container>
+		);
 	};
