@@ -50,6 +50,11 @@ ReactDOM.render(
 							component={createComponentAlreadyLogged("register")}
 						/>
 						<Route
+							path="/login"
+							exact
+							component={createComponentRequireLogin("login")}
+						/>
+						<Route
 							path="/"
 							exact
 							component={createComponentRequireLogin("home")}

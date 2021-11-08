@@ -11,7 +11,7 @@ export const RequireLogin: FC<{ children: Array<JSX.Element> | JSX.Element }> =
 			const token = localStorage.getItem("userToken");
 
 			if (!token && !authContext.token) {
-				history.push("/company/register");
+				history.push("/login");
 
 				return;
 			}
