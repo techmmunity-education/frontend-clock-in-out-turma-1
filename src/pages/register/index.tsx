@@ -157,7 +157,7 @@ const Register = () => {
 					<Form.Item wrapperCol={{ offset: 8 }} style={{ marginBottom: 0 }}>
 						<span>Já possui cadastro?</span>
 						<Col offset={2}>
-							<Link to="/">Clique aqui!</Link>
+							<Link to="/login">Clique aqui!</Link>
 						</Col>
 					</Form.Item>
 				</Form>

@@ -45,9 +45,14 @@ ReactDOM.render(
 				<Switch>
 					<Suspense fallback={<div></div>}>
 						<Route
-							path="/company/register"
+							path="/register"
 							exact
 							component={createComponentAlreadyLogged("register")}
+						/>
+						<Route
+							path="/login"
+							exact
+							component={createComponentAlreadyLogged("login")}
 						/>
 						<Route
 							path="/"
