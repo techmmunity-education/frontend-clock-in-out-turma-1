@@ -66,7 +66,7 @@ const Login = () => {
 						name="cnpj"
 						rules={[{ required: true, message: "CNPJ é um campo obrigatório" }]}
 					>
-						<Input placeholder="Digite seu CNPJ" type="text" />
+						<Input placeholder="Digite seu CNPJ" />
 					</Form.Item>
 
 					<Form.Item
@@ -74,7 +74,7 @@ const Login = () => {
 						name="cpf"
 						rules={[{ required: true, message: "CPF é um campo obrigatório" }]}
 					>
-						<Input placeholder="Digite seu CPF" type="text" />
+						<Input placeholder="Digite seu CPF" />
 					</Form.Item>
 
 					<Form.Item
@@ -109,7 +109,7 @@ const Login = () => {
 					<Form.Item wrapperCol={{ offset: 8 }} style={{ marginBottom: 0 }}>
 						<span>Não possui cadastro?</span>
 						<Col offset={2}>
-							<Link to="/company/register">Clique aqui!</Link>
+							<Link to="/register">Clique aqui!</Link>
 						</Col>
 					</Form.Item>
 				</Form>
