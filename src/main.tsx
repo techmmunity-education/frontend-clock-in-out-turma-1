@@ -55,7 +55,7 @@ ReactDOM.render(
 							component={createComponentAlreadyLogged("login")}
 						/>
 						<Route
-							path="/"
+							path="/employee/home"
 							exact
 							component={createComponentRequireLogin("home")}
 						/>
