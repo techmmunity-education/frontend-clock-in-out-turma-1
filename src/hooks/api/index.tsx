@@ -18,7 +18,10 @@ export const useApi = () => {
 			.then(result => result.data);
 
 	const login = (params: LoginInput) =>
-		instance.post<LoginOutput>("/employee/login", params);
+		instance
+			.post<LoginOutput>("/employee/login", params)
+			.then(result => result.data);
+
 	const createClockInOut = (params: CreateClockInOutInput) =>
 		instance
 			.post("/clock-in-out/create", params, {
